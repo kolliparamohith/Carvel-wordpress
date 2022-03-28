@@ -24,6 +24,15 @@ You can configure the following:
 |wordpressBlogName| Blog name|string|User's Blog!|
 |wordpressTablePrefix|Prefix to use for WordPress database tables|string|wp_|
 |wordpressScheme|Scheme to use to generate WordPress URLs|string|http|
+|wordpressExtraWpConfigContent|wordpress Extra Wp Config Content|string|" "|
+|WordpressAutoUpdateLevel|Wordpress Auto Update Level|string|none|
+|WordpressPlugins|WordpressPlugins|string|none|
+|ApacheHttpPortNumber|Wordpress Apache Http Port Number|integer|8080|
+|ApacheHttpsPortNumber|Wordpress Apache HTTPS Port Number|integer|8443|
+|mariadbrootPassword|mariadb root Password|string|mypassword|
+|mariadbPassword|mariadb Password|string|dbpassword|
+|wordpressPassword|wordpress Password|string|myadmin|
+
 
 ### WordPress deployment parameters
 
@@ -45,6 +54,7 @@ You can configure the following:
 |readinessProbe.timeoutSeconds|Timeout seconds for readinessProbe|integer|5|
 |readinessProbe.failureThreshold|Failure threshold for readinessProbe|integer|6|
 |readinessProbe.successThreshold| Success threshold for readinessProbe|integer|1|
+
 
 ### Traffic Exposure Parameters
 
@@ -82,6 +92,12 @@ You can configure the following:
 |metrics.readinessProbe.successThreshold|Success threshold for readinessProbe|integer|1|
 |metrics.serviceMonitor.enabled|Create ServiceMonitor Resource for scraping metrics using Prometheus Operator|string|false|
 |metrics.serviceMonitor.honorLabels|Specify honorLabels parameter to add the scrape endpoint|string|false|
+|metrics.containerPorts.metrics|Prometheus exporter container port|integer|9117|
+|metrics.service.ports.metrics|Prometheus metrics service port|integer|9150|
 
-
-
+### Database Parameters
+|Parameter|Description|Type|Deafult|
+|---------|-----------|----|-------|
+|mariadb.primary.persistence.size|Persistent Volume size|integer|10Gi|
+|volumeClaimTemplates|volume claim size|integer|8Gi|
+|externalDatabase.port|External Database server port|integer|3306|
