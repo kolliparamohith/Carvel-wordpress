@@ -32,7 +32,7 @@ You can configure the following:
 |mariadbrootPassword|mariadb root Password|string|mypassword|
 |mariadbPassword|mariadb Password|string|dbpassword|
 |wordpressPassword|wordpress Password|string|myadmin|
-
+|memcachedPassword|memcached Password|string|mempassword|
 
 ### WordPress deployment parameters
 
@@ -54,7 +54,6 @@ You can configure the following:
 |readinessProbe.timeoutSeconds|Timeout seconds for readinessProbe|integer|5|
 |readinessProbe.failureThreshold|Failure threshold for readinessProbe|integer|6|
 |readinessProbe.successThreshold| Success threshold for readinessProbe|integer|1|
-
 
 ### Traffic Exposure Parameters
 
@@ -101,3 +100,7 @@ You can configure the following:
 |mariadb.primary.persistence.size|Persistent Volume size|integer|10Gi|
 |volumeClaimTemplates|volume claim size|integer|8Gi|
 |externalDatabase.port|External Database server port|integer|3306|
+|memcached.enabled|Deploy a Memcached server for caching database queries|string|false|
+|memcached.auth.username|Memcached admin user|string|myuser|
+|memcached.auth.password|Memcached admin password|string|" "|
+|memcached.service.port|Memcached service port|integer|11211|
