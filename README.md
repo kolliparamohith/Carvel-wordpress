@@ -54,6 +54,12 @@ You can configure the following:
 |readinessProbe.timeoutSeconds|Timeout seconds for readinessProbe|integer|5|
 |readinessProbe.failureThreshold|Failure threshold for readinessProbe|integer|6|
 |readinessProbe.successThreshold| Success threshold for readinessProbe|integer|1|
+|resources.limits|The resources limits for the WordPress containers|string|{}|
+|resources.requests.memory|The requested memory for the WordPress containers|integer|512Mi|
+|resources.requests.cpu|The requested cpu for the WordPress containers|integer|300m|
+|resources.limits|The resources limits for the memcached containers|string|{}|
+|resources.requests.memory|The requested memory for the memcached containers|integer|256Mi|
+|resources.requests.cpu|The requested cpu for the memcached containers|integer|250m|
 
 ### Traffic Exposure Parameters
 
@@ -95,6 +101,7 @@ You can configure the following:
 |metrics.service.ports.metrics|Prometheus metrics service port|integer|9150|
 
 ### Database Parameters
+
 |Parameter|Description|Type|Deafult|
 |---------|-----------|----|-------|
 |mariadb.primary.persistence.size|Persistent Volume size|integer|10Gi|
@@ -104,3 +111,17 @@ You can configure the following:
 |memcached.auth.username|Memcached admin user|string|myuser|
 |memcached.auth.password|Memcached admin password|string|" "|
 |memcached.service.port|Memcached service port|integer|11211|
+|mariadb.Host|mariadb hostname|string|mariadb|
+|mariadb.portnumber|mariadb port number|integer|3306|
+|mariadb.auth.database|MariaDB custom database|string|bitnami_wordpress|
+|mariadb.auth.username|MariaDB custom user name|string|bn_wordpress|
+|memcached.livenessProbe.failureThreshold|Failure threshold for livenessProbe|integer|6|
+|memcached.livenessProbe.initialDelaySeconds|Initial delay seconds for livenessProbe|integer|30|
+|memcached.livenessProbe.periodSeconds|Period seconds for livenessProbe|integer|10|
+|memcached.livenessProbe.successThreshold|Success threshold for livenessProbe|integer|1|
+|memcached.livenessProbe.timeoutSeconds|Timeout seconds for livenessProbe|integer|5|
+|memcached.readinessProbe.failureThreshold|Failure threshold for readinessProbe|integer|6|
+|memcached.readinessProbe.initialDelaySeconds|Initial delay seconds for readinessProbe|integer|5|
+|memcached.readinessProbe.periodSeconds|Period seconds for readinessProbe|integer|5|
+|memcached.readinessProbe.successThreshold|Success threshold for readinessProbe|integer|1|
+|memcached.readinessProbe.timeoutSeconds|Timeout seconds for readinessProbe|integer|3|
